@@ -1,0 +1,157 @@
+@startuml
+left to right direction
+skinparam actorStyle awesome
+skinparam usecase {
+  BackgroundColor #F8F8F8
+  BorderColor #333333
+  ArrowColor #333333
+}
+
+'-----------------------------
+' Акторы
+'-----------------------------
+actor "Заказчик\n(Юр. лицо)" as Customer
+actor "Руководитель отдела /\nБригадир" as Manager
+actor "Директор отдела\nразработки" as Director
+actor "Исполнитель" as Executor
+actor "Работник склада" as Storekeeper
+actor "Администратор" as Admin
+
+'-----------------------------
+' Пакет системы
+'-----------------------------
+rectangle "Система управления заявками\nи ресурсами" {
+
+  '---------------------------
+  ' 1. Управление заявками
+  '---------------------------
+  usecase "Создать заявку" as UC_CreateRequest
+  usecase "Регистрация заявки\n(уникальный номер,\nдата обращения)" as UC_RegisterRequest
+  usecase "Просмотр списка заявок" as UC_ViewRequests
+  usecase "Редактирование заявки\n(до статуса \"В работе\")" as UC_EditRequest
+  usecase "Управление статусами заявки\n(Новая, В работе,\nНа паузе, Завершена, Отменена)" as UC_ManageRequestStatus
+
+  '---------------------------
+  ' 2. Управление этапами работ
+  '---------------------------
+  usecase "Декомпозиция заявки\nна этапы" as UC_DecomposeToStages
+  usecase "Использование шаблонов\nэтапов для типовых заявок" as UC_UseStageTemplates
+  usecase "Настройка шаблонов этапов" as UC_ManageStageTemplates
+  usecase "Задание параметров этапа\n(наименование, описание,\nплановые даты, зависимости)" as UC_SetStageParams
+  usecase "Формирование перечня\nресурсов для этапа" as UC_DefineStageResources
+  usecase "Запрос назначения\nисполнителей на этапы" as UC_RequestExecutors
+  usecase "Назначение исполнителей\nна этапы" as UC_AssignExecutors
+
+  '---------------------------
+  ' 3. Рабочее место исполнителя
+  '---------------------------
+  usecase "Просмотр списка\nназначенных этапов/задач" as UC_ViewAssignedStages
+  usecase "Отметка о начале\nработ по этапу" as UC_StartStage
+  usecase "Запрос дополнительных\nресурсов для этапа" as UC_RequestExtraResources
+  usecase "Фиксация прогресса\nи ключевых меток времени" as UC_TrackProgress
+  usecase "Завершение этапа\nс комментарием/отчетом" as UC_CompleteStage
+
+  '---------------------------
+  ' 4. Управление ресурсами и складом
+  '---------------------------
+  usecase "Учет типов ресурсов\n(оборудование, расходники,\nатрибуты)" as UC_ManageResourceTypes
+  usecase "Учет поступлений\nресурсов на склад\n(приходные накладные)" as UC_TrackResourceIncome
+  usecase "Резервирование ресурсов\nпод утвержденные этапы\n(с учетом бюджетов/лимитов)" as UC_ReserveResources
+  usecase "Обработка запросов\nресурсов по этапам" as UC_ProcessStageResourceRequests
+  usecase "Проведение инвентаризации\nсклада" as UC_Inventory
+
+  '---------------------------
+  ' 5. Отчетность и аналитика
+  '---------------------------
+  usecase "Отчеты по статусам заявок" as UC_ReportRequestStatuses
+  usecase "Отчеты по загрузке\nисполнителей" as UC_ReportExecutorsLoad
+  usecase "Отчеты по использованию\nресурсов" as UC_ReportResourceUsage
+  usecase "Отчеты по остаткам\nна складе" as UC_ReportStock
+
+  '---------------------------
+  ' 6. Администрирование системы
+  '---------------------------
+  usecase "Управление пользователями\n(создание, блокировка,\nудаление)" as UC_ManageUsers
+  usecase "Назначение и\nизменение ролей\n(Администратор, Руководитель,\nИсполнитель, Работник склада)" as UC_ManageRoles
+}
+
+'-----------------------------
+' Связь акторов с вариантами
+'-----------------------------
+
+' Заказчик
+Customer --> UC_CreateRequest
+
+' Руководитель / Бригадир
+Manager --> UC_ViewRequests
+Manager --> UC_EditRequest
+Manager --> UC_ManageRequestStatus
+Manager --> UC_DecomposeToStages
+Manager --> UC_UseStageTemplates
+Manager --> UC_SetStageParams
+Manager --> UC_DefineStageResources
+Manager --> UC_RequestExecutors
+
+' Директор отдела разработки
+Director --> UC_AssignExecutors
+
+' Исполнитель
+Executor --> UC_ViewAssignedStages
+Executor --> UC_StartStage
+Executor --> UC_RequestExtraResources
+Executor --> UC_TrackProgress
+Executor --> UC_CompleteStage
+
+' Работник склада
+Storekeeper --> UC_ManageResourceTypes
+Storekeeper --> UC_TrackResourceIncome
+Storekeeper --> UC_ReserveResources
+Storekeeper --> UC_ProcessStageResourceRequests
+Storekeeper --> UC_Inventory
+
+' Администратор
+Admin --> UC_ManageUsers
+Admin --> UC_ManageRoles
+
+'-----------------------------
+' Внутренние отношения include/extend
+'-----------------------------
+
+' Создание и регистрация заявки
+UC_CreateRequest --> UC_RegisterRequest : <<include>>
+
+' Этапы и ресурсы
+UC_DecomposeToStages --> UC_SetStageParams : <<include>>
+UC_DecomposeToStages --> UC_DefineStageResources : <<include>>
+UC_UseStageTemplates --> UC_DecomposeToStages : <<include>>
+
+' Запрос/резерв ресурсов
+UC_RequestExtraResources --> UC_ProcessStageResourceRequests : <<include>>
+UC_ProcessStageResourceRequests --> UC_ReserveResources : <<include>>
+
+' Отчетность (общий доступ)
+Manager --> UC_ReportRequestStatuses
+Manager --> UC_ReportExecutorsLoad
+Manager --> UC_ReportResourceUsage
+Manager --> UC_ReportStock
+
+Executor --> UC_ReportExecutorsLoad
+
+Storekeeper --> UC_ReportResourceUsage
+Storekeeper --> UC_ReportStock
+
+Director --> UC_ReportRequestStatuses
+Director --> UC_ReportExecutorsLoad
+Director --> UC_ReportResourceUsage
+Director --> UC_ReportStock
+
+Admin --> UC_ReportRequestStatuses
+Admin --> UC_ReportExecutorsLoad
+Admin --> UC_ReportResourceUsage
+Admin --> UC_ReportStock
+
+' Шаблоны этапов настраиваются руководителем
+Manager --> UC_ManageStageTemplates
+UC_ManageStageTemplates --> UC_UseStageTemplates : <<include>>
+
+@enduml

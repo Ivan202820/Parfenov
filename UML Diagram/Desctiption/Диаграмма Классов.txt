@@ -1,0 +1,322 @@
+@startuml
+title UML Диаграмма классов (доменная модель)
+
+skinparam classAttributeIconSize 0
+
+'-------------------------
+' Базовые справочники
+'-------------------------
+class User {
+  +user_id: INTEGER
+  +login: TEXT
+  +password_hash: TEXT
+  +full_name: TEXT
+  +email: TEXT
+  +is_active: BOOLEAN
+}
+
+class Role {
+  +role_id: INTEGER
+  +code: TEXT <<unique>>
+  +name: TEXT
+  +description: TEXT
+}
+
+class UserRole {
+  +user_id: INTEGER
+  +role_id: INTEGER
+  --
+  +assigned_at: DATETIME
+}
+
+User "1" -- "0..*" UserRole
+Role "1" -- "0..*" UserRole
+
+'-------------------------
+' Заказчики и договоры
+'-------------------------
+class Customer {
+  +customer_id: INTEGER
+  +name: TEXT
+  +address: TEXT
+  +contact_person: TEXT
+  +phone: TEXT
+  +email: TEXT
+}
+
+class Contract {
+  +contract_id: INTEGER
+  +customer_id: INTEGER
+  +contract_number: TEXT
+  +start_date: DATE
+  +end_date: DATE
+  +description: TEXT
+}
+
+Customer "1" -- "0..*" Contract
+
+'-------------------------
+' Заявки
+'-------------------------
+class RequestStatus {
+  +request_status_id: INTEGER
+  +code: TEXT <<unique>>
+  +name: TEXT
+}
+
+class Request {
+  +request_id: INTEGER
+  +request_number: TEXT <<unique>>
+  +created_at: DATETIME
+  +applicant_full_name: TEXT
+  +applicant_address: TEXT
+  +description: TEXT
+  +request_status_id: INTEGER
+  +customer_id: INTEGER
+  +contract_id: INTEGER
+  +created_by_user_id: INTEGER
+}
+
+RequestStatus "1" -- "0..*" Request
+Customer "1" -- "0..*" Request
+Contract "1" -- "0..*" Request
+User "1" -- "0..*" Request : created_by
+
+class RequestHistory {
+  +request_history_id: INTEGER
+  +request_id: INTEGER
+  +changed_at: DATETIME
+  +changed_by_user_id: INTEGER
+  +old_status_id: INTEGER
+  +new_status_id: INTEGER
+  +comment: TEXT
+}
+
+Request "1" -- "0..*" RequestHistory
+User "1" -- "0..*" RequestHistory : changed_by
+RequestStatus "1" -- "0..*" RequestHistory : old_status
+RequestStatus "1" -- "0..*" RequestHistory : new_status
+
+'-------------------------
+' Этапы заявки
+'-------------------------
+class StageTemplate {
+  +stage_template_id: INTEGER
+  +name: TEXT
+  +description: TEXT
+}
+
+class StageTemplateItem {
+  +stage_template_item_id: INTEGER
+  +stage_template_id: INTEGER
+  +name: TEXT
+  +description: TEXT
+  +default_duration_days: INTEGER
+  +sequence_order: INTEGER
+}
+
+StageTemplate "1" -- "0..*" StageTemplateItem
+
+class StageStatus {
+  +stage_status_id: INTEGER
+  +code: TEXT <<unique>>
+  +name: TEXT
+}
+
+class Stage {
+  +stage_id: INTEGER
+  +request_id: INTEGER
+  +name: TEXT
+  +description: TEXT
+  +planned_start: DATETIME
+  +planned_end: DATETIME
+  +actual_start: DATETIME
+  +actual_end: DATETIME
+  +stage_status_id: INTEGER
+  +sequence_order: INTEGER
+}
+
+Request "1" -- "0..*" Stage
+StageStatus "1" -- "0..*" Stage
+
+' Зависимости между этапами (many-to-many через ассоциацию)
+class StageDependency {
+  +stage_dependency_id: INTEGER
+  +predecessor_stage_id: INTEGER
+  +successor_stage_id: INTEGER
+  +dependency_type: TEXT
+}
+
+Stage "1" -- "0..*" StageDependency : predecessor
+Stage "1" -- "0..*" StageDependency : successor
+
+' Назначения исполнителей на этапы
+class StageAssignment {
+  +stage_assignment_id: INTEGER
+  +stage_id: INTEGER
+  +executor_user_id: INTEGER
+  +assigned_by_user_id: INTEGER
+  +assigned_at: DATETIME
+  +role_in_stage: TEXT
+}
+
+Stage "1" -- "0..*" StageAssignment
+User "1" -- "0..*" StageAssignment : executor
+User "1" -- "0..*" StageAssignment : assigned_by
+
+' Прогресс по этапу (лог)
+class StageProgress {
+  +stage_progress_id: INTEGER
+  +stage_id: INTEGER
+  +recorded_at: DATETIME
+  +recorded_by_user_id: INTEGER
+  +progress_percent: INTEGER
+  +comment: TEXT
+  +status_snapshot_id: INTEGER
+}
+
+Stage "1" -- "0..*" StageProgress
+User "1" -- "0..*" StageProgress : recorded_by
+StageStatus "1" -- "0..*" StageProgress : status_snapshot
+
+' Итоговый отчет по этапу
+class StageCompletionReport {
+  +stage_completion_report_id: INTEGER
+  +stage_id: INTEGER
+  +completed_by_user_id: INTEGER
+  +completed_at: DATETIME
+  +comment: TEXT
+}
+
+Stage "1" -- "0..1" StageCompletionReport
+User "1" -- "0..*" StageCompletionReport : completed_by
+
+'-------------------------
+' Ресурсы и склад
+'-------------------------
+class ResourceType {
+  +resource_type_id: INTEGER
+  +code: TEXT <<unique>>
+  +name: TEXT
+  +description: TEXT
+}
+
+class ResourceItem {
+  +resource_id: INTEGER
+  +resource_type_id: INTEGER
+  +name: TEXT
+  +unit_of_measure: TEXT
+  +is_consumable: BOOLEAN
+  +attributes_json: TEXT
+}
+
+ResourceType "1" -- "0..*" ResourceItem
+
+' Складские остатки
+class WarehouseStock {
+  +warehouse_stock_id: INTEGER
+  +resource_id: INTEGER
+  +quantity_total: REAL
+  +quantity_reserved: REAL
+  +quantity_available: REAL
+}
+
+ResourceItem "1" -- "0..1" WarehouseStock
+
+' Поступления
+class GoodsReceipt {
+  +goods_receipt_id: INTEGER
+  +receipt_number: TEXT
+  +receipt_date: DATETIME
+  +supplier_name: TEXT
+  +created_by_user_id: INTEGER
+}
+
+User "1" -- "0..*" GoodsReceipt
+
+class GoodsReceiptItem {
+  +goods_receipt_item_id: INTEGER
+  +goods_receipt_id: INTEGER
+  +resource_id: INTEGER
+  +quantity: REAL
+  +unit_price: REAL
+}
+
+GoodsReceipt "1" -- "0..*" GoodsReceiptItem
+ResourceItem "1" -- "0..*" GoodsReceiptItem
+
+' Запрос ресурсов по этапу
+class ResourceRequest {
+  +resource_request_id: INTEGER
+  +stage_id: INTEGER
+  +requested_by_user_id: INTEGER
+  +requested_at: DATETIME
+  +status: TEXT
+  +comment: TEXT
+}
+
+Stage "1" -- "0..*" ResourceRequest
+User "1" -- "0..*" ResourceRequest : requested_by
+
+class ResourceRequestItem {
+  +resource_request_item_id: INTEGER
+  +resource_request_id: INTEGER
+  +resource_id: INTEGER
+  +quantity_requested: REAL
+  +quantity_approved: REAL
+}
+
+ResourceRequest "1" -- "0..*" ResourceRequestItem
+ResourceItem "1" -- "0..*" ResourceRequestItem
+
+' Резервирование и выдача
+class ResourceReservation {
+  +resource_reservation_id: INTEGER
+  +stage_id: INTEGER
+  +resource_id: INTEGER
+  +quantity_reserved: REAL
+  +reserved_at: DATETIME
+  +reserved_by_user_id: INTEGER
+}
+
+Stage "1" -- "0..*" ResourceReservation
+ResourceItem "1" -- "0..*" ResourceReservation
+User "1" -- "0..*" ResourceReservation : reserved_by
+
+class ResourceIssue {
+  +resource_issue_id: INTEGER
+  +stage_id: INTEGER
+  +resource_id: INTEGER
+  +quantity_issued: REAL
+  +issued_at: DATETIME
+  +issued_by_user_id: INTEGER
+  +quantity_returned: REAL
+  +returned_at: DATETIME
+}
+
+Stage "1" -- "0..*" ResourceIssue
+ResourceItem "1" -- "0..*" ResourceIssue
+User "1" -- "0..*" ResourceIssue : issued_by
+
+' Инвентаризация
+class Inventory {
+  +inventory_id: INTEGER
+  +inventory_date: DATETIME
+  +performed_by_user_id: INTEGER
+  +comment: TEXT
+}
+
+class InventoryItem {
+  +inventory_item_id: INTEGER
+  +inventory_id: INTEGER
+  +resource_id: INTEGER
+  +quantity_system: REAL
+  +quantity_actual: REAL
+  +difference: REAL
+}
+
+Inventory "1" -- "0..*" InventoryItem
+ResourceItem "1" -- "0..*" InventoryItem
+User "1" -- "0..*" Inventory : performed_by
+
+@enduml
