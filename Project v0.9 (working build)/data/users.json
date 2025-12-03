@@ -1,0 +1,76 @@
+{
+    "admin": {
+        "username": "admin",
+        "password_hash": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+        "role": "admin",
+        "full_name": "\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440 \u0421\u0438\u0441\u0442\u0435\u043c\u044b",
+        "department": "",
+        "status": "active"
+    },
+    "customer1": {
+        "username": "customer1",
+        "password_hash": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+        "role": "customer",
+        "full_name": "\u0418\u0432\u0430\u043d\u043e\u0432 \u0418\u0432\u0430\u043d",
+        "department": "\u041e\u041e\u041e '\u0420\u043e\u043c\u0430\u0448\u043a\u0430'",
+        "status": "active"
+    },
+    "manager1": {
+        "username": "manager1",
+        "password_hash": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+        "role": "manager",
+        "full_name": "\u041f\u0435\u0442\u0440\u043e\u0432 \u041f\u0435\u0442\u0440",
+        "department": "\u041e\u0442\u0434\u0435\u043b \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438",
+        "status": "active"
+    },
+    "executor1": {
+        "username": "executor1",
+        "password_hash": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+        "role": "executor",
+        "full_name": "\u0421\u0438\u0434\u043e\u0440\u043e\u0432 \u0410\u043b\u0435\u043a\u0441\u0435\u0439",
+        "department": "\u041e\u0442\u0434\u0435\u043b \u0440\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0438",
+        "status": "active"
+    },
+    "storeman1": {
+        "username": "storeman1",
+        "password_hash": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+        "role": "storeman",
+        "full_name": "\u041a\u0443\u0437\u043d\u0435\u0446\u043e\u0432\u0430 \u041c\u0430\u0440\u0438\u044f",
+        "department": "\u0421\u043a\u043b\u0430\u0434",
+        "status": "active"
+    },
+    "Aleksey": {
+        "username": "Aleksey",
+        "password_hash": "4ace85a8616c0f4e4c90af7e69b8507ffca11091077739336599296e61ebb208",
+        "role": "customer",
+        "full_name": "\u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u041a\u043e\u043d\u043e\u0432\u0430\u043b\u043e\u0432 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+        "department": "\u0410\u0421\u041c\u041e"
+    },
+    "test": {
+        "username": "test",
+        "password_hash": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+        "role": "executor",
+        "full_name": "test",
+        "department": "test",
+        "status": "active",
+        "created_at": "2025-11-17T20:09:19.550820"
+    },
+    "test1": {
+        "username": "test1",
+        "password_hash": "1b4f0e9851971998e732078544c96b36c3d01cedf7caa332359d6f1d83567014",
+        "role": "admin",
+        "full_name": "test1",
+        "department": "",
+        "status": "active",
+        "created_at": "2025-11-17T20:20:54.427334"
+    },
+    "test2": {
+        "username": "test2",
+        "password_hash": "9b8769a4a742959a2d0298c36fb70623f2dfacda8436237df08d8dfd5b37374c",
+        "role": "manager",
+        "full_name": "test2",
+        "department": "test2",
+        "status": "active",
+        "created_at": "2025-11-17T20:56:56.745491"
+    }
+}

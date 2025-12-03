@@ -1,0 +1,285 @@
+{
+    "app_20251111_151142": {
+        "id": "app_20251111_151142",
+        "date": "2025-11-11T15:11:42.075151",
+        "customer": "Aleksey",
+        "contract_number": "8888",
+        "description": "\u0410\u0421\u041c\u041e",
+        "status": "created",
+        "stages": {
+            "stage_1": {
+                "id": "stage_1",
+                "name": "\u0420\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u043e\u0432 \u043f\u043e \u043e\u0442\u0434\u0435\u043b\u0430\u043c",
+                "executor": "executor1",
+                "status": "completed",
+                "requested_resources": [
+                    {
+                        "resource": "\u041d\u043e\u0443\u0442\u0431\u0443\u043a",
+                        "quantity": 10,
+                        "status": "requested"
+                    }
+                ],
+                "report": "\u041d\u0435 \u0432\u044b\u0434\u0435\u043b\u0438\u043b\u0438"
+            }
+        },
+        "customer_name": "\u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u041a\u043e\u043d\u043e\u0432\u0430\u043b\u043e\u0432 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447"
+    },
+    "app_20251111_155953": {
+        "id": "app_20251111_155953",
+        "date": "2025-11-11T15:59:53.361704",
+        "customer": "customer1",
+        "contract_number": "123",
+        "description": "\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u043f\u043e\u043a\u0443\u043f\u043a\u0443 10 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u043e\u0432",
+        "status": "created",
+        "stages": {
+            "stage_1": {
+                "id": "stage_1",
+                "name": "\u0412\u044b\u0434\u0435\u043b\u0438\u0442\u044c 10 \u043d\u043e\u0443\u0442\u0431\u0443\u043a\u043e\u0432",
+                "executor": "executor1",
+                "status": "completed",
+                "requested_resources": [
+                    {
+                        "resource": "\u041d\u043e\u0443\u0442\u0431\u0443\u043a",
+                        "quantity": 10,
+                        "status": "allocated",
+                        "requested_by": "executor1",
+                        "request_date": "2025-11-11T16:02:00.221247",
+                        "allocated_by": "storeman1",
+                        "allocation_date": "2025-11-11T16:03:09.831599"
+                    }
+                ],
+                "report": "\u0412\u044b\u0434\u0435\u043b\u0438\u043b\u0438 \u0432\u0441\u0435 \u043f\u043e \u043a\u0440\u0430\u0441\u043e\u0442\u0435"
+            },
+            "stage_2": {
+                "id": "stage_2",
+                "name": "\u0418 \u0435\u0449\u0435 \u043e\u0434\u0438\u043d \u0432 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u043f\u043e\u0434\u0430\u0440\u043a\u0430)",
+                "executor": "executor1",
+                "status": "completed",
+                "requested_resources": [
+                    {
+                        "resource": "\u041d\u043e\u0443\u0442\u0431\u0443\u043a",
+                        "quantity": 1,
+                        "status": "allocated",
+                        "requested_by": "executor1",
+                        "request_date": "2025-11-11T16:02:15.812396",
+                        "allocated_by": "storeman1",
+                        "allocation_date": "2025-11-11T16:03:24.902159"
+                    }
+                ],
+                "report": "\u0418 \u043f\u043e\u0434\u0430\u0440\u043e\u043a \u0442\u043e\u0436\u0435)"
+            }
+        },
+        "customer_name": "\u0418\u0432\u0430\u043d\u043e\u0432 \u0418\u0432\u0430\u043d"
+    },
+    "app_20251111_162627": {
+        "id": "app_20251111_162627",
+        "date": "2025-11-11T16:26:27.315567",
+        "customer": "Aleksey",
+        "contract_number": "1488",
+        "description": "\u0425\u0430\u0447\u0443 \u043c\u043d\u043e\u0433\u0430 \u0430\u0441\u043c\u043e \u0433\u0440\u0430\u0444\u043e\u0432, \u043d\u0435\u043d\u0430\u0432\u0438\u0436\u0443 \u0412\u0438\u0437\u0438\u043e\u043e\u043e",
+        "status": "created",
+        "stages": {
+            "stage_1": {
+                "id": "stage_1",
+                "name": "stage_228",
+                "executor": "executor1",
+                "status": "completed",
+                "requested_resources": [
+                    {
+                        "resource": "\u0410\u0421\u041c\u041e\u0433\u0440\u0430\u0444",
+                        "quantity": 52,
+                        "status": "allocated",
+                        "requested_by": "executor1",
+                        "request_date": "2025-11-11T16:28:37.084154",
+                        "allocated_by": "storeman1",
+                        "allocation_date": "2025-11-11T16:29:00.291435"
+                    }
+                ],
+                "report": "\u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u043f\u043e\u043b\u0443\u0447\u0438\u043b \u0441\u0442\u043e\u043b\u044c\u043a\u043e \u0410\u0421\u041c\u041e, \u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0445\u043e\u0442\u0435\u043b)"
+            }
+        },
+        "customer_name": "\u0410\u043b\u0435\u043a\u0441\u0435\u0439 \u041a\u043e\u043d\u043e\u0432\u0430\u043b\u043e\u0432 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447"
+    },
+    "app_20251116_202441": {
+        "id": "app_20251116_202441",
+        "date": "2025-11-16T20:24:41.458890",
+        "customer": "customer1",
+        "contract_number": "88005553535",
+        "description": "ASMO_SOZDAT",
+        "status": "created",
+        "stages": {
+            "stage_1": {
+                "id": "stage_1",
+                "name": "\u0410\u0421\u041c\u041e\u0435\u0434",
+                "executor": "customer1",
+                "status": "assigned",
+                "requested_resources": [],
+                "report": ""
+            }
+        },
+        "customer_name": "\u0418\u0432\u0430\u043d\u043e\u0432 \u0418\u0432\u0430\u043d"
+    },
+    "app_20251116_232453": {
+        "id": "app_20251116_232453",
+        "date": "2025-11-16T23:24:53.183876",
+        "customer": "customer1",
+        "contract_number": "111111",
+        "description": "\u0410\u0421\u041c\u041e\u041e\u041e\u041e\u041e",
+        "address": "\u041f\u0443\u0448\u043a\u0438\u043d\u0430 \u041a\u043e\u043b\u043e\u0442\u0443\u0448\u043a\u0438\u043d\u0430 (\u0434\u0430)",
+        "status": "\u041d\u043e\u0432\u0430\u044f",
+        "stages": {},
+        "customer_name": "\u0418\u0432\u0430\u043d\u043e\u0432 \u0418\u0432\u0430\u043d"
+    },
+    "app_20251116_234651": {
+        "id": "app_20251116_234651",
+        "date": "2025-11-16T23:46:51.588187",
+        "customer": "manager1",
+        "contract_number": "222222",
+        "description": "\u0422\u0435\u0441\u0442",
+        "address": "\u041f\u0443\u0448\u043a\u0438\u043d\u0430 \u041f\u0440\u043e\u0441\u0442\u043e",
+        "status": "\u041e\u0442\u043c\u0435\u043d\u0435\u043d\u0430",
+        "stages": {},
+        "customer_name": "\u041f\u0435\u0442\u0440\u043e\u0432 \u041f\u0435\u0442\u0440"
+    },
+    "app_20251117_001119": {
+        "id": "app_20251117_001119",
+        "date": "2025-11-17T00:11:19.573766",
+        "customer_name": "33",
+        "contract_number": "33",
+        "description": "33",
+        "address": "33",
+        "status": "\u041d\u043e\u0432\u0430\u044f",
+        "stages": {}
+    },
+    "app_20251117_001209": {
+        "id": "app_20251117_001209",
+        "date": "2025-11-17T00:12:09.210988",
+        "customer_name": "\u041f\u043e\u0437\u0434\u043d\u044f\u043a\u043e\u0432 \u0412\u043b\u0430\u0434\u0438\u0441\u043b\u0430\u0432 \u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440\u043e\u0432\u0438\u0447",
+        "contract_number": "444444",
+        "description": "\u041f\u043e\u0437\u0434\u043d\u044f\u043a\u043e\u0432 3.0 \u041f\u043e\u0434\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f",
+        "address": "\u0421\u0430\u043c\u043e\u0441\u0438\u0440",
+        "status": "\u041d\u043e\u0432\u0430\u044f",
+        "stages": {}
+    },
+    "app_20251117_001711": {
+        "id": "app_20251117_001711",
+        "date": "2025-11-17T00:17:11.178212",
+        "customer_name": "44",
+        "contract_number": "44",
+        "description": "44",
+        "address": "44",
+        "status": "\u041d\u043e\u0432\u0430\u044f",
+        "stages": {}
+    },
+    "app_20251117_195523": {
+        "id": "app_20251117_195523",
+        "date": "2025-11-17T19:55:23.356316",
+        "customer_name": "\u041f\u043e\u0437\u0434\u043d\u044f\u043a\u043e\u0432 \u0412. \u0412.",
+        "contract_number": "999",
+        "description": "\u041d\u0443\u0436\u043d\u043e 40 \u0410\u0421\u041c\u041e\u0433\u0440\u0430\u0444\u043e\u0432",
+        "address": "\u0421\u0430\u043c\u043e\u0441\u0438\u0440",
+        "status": "\u0412 \u0440\u0430\u0431\u043e\u0442\u0435",
+        "stages": {
+            "stage_1": {
+                "id": "stage_1",
+                "name": "40 \u0410\u0441\u043c\u043e\u0433\u0440\u0430\u0444\u043e\u0432",
+                "executor": "customer1",
+                "status": "assigned",
+                "requested_resources": [],
+                "report": ""
+            },
+            "stage_2": {
+                "id": "stage_2",
+                "name": "\u0414\u0430\u0439\u0442\u0435 \u0441\u043a\u043e\u043a\u0430 \u0435\u0441\u0442\u044c \u0410\u0441\u043c\u043e\u0433\u0440\u0430\u0444\u043e\u0432",
+                "executor": "executor1",
+                "status": "assigned",
+                "requested_resources": [],
+                "report": ""
+            }
+        }
+    },
+    "app_20251117_195634": {
+        "id": "app_20251117_195634",
+        "date": "2025-11-17T19:56:34.778985",
+        "customer_name": "\u041f\u043e\u0437\u0434\u043d\u044f\u043a\u043e\u0432 \u0412. \u0412.",
+        "contract_number": "888",
+        "description": "\u041d\u0443\u0436\u043d\u043e 40 \u0410\u0421\u041c\u041e\u0433\u0440\u0430\u0444\u043e\u0432",
+        "address": "\u0421\u0430\u043c\u043e\u0441\u0438\u0440",
+        "status": "\u0412 \u0440\u0430\u0431\u043e\u0442\u0435",
+        "stages": {
+            "stage_1": {
+                "id": "stage_1",
+                "name": "40 \u0410\u0421\u041c\u041e\u0433\u0440\u0430\u0444\u043e\u0432",
+                "executor": "executor1",
+                "status": "assigned",
+                "requested_resources": [
+                    {
+                        "resource": "\u0410\u0421\u041c\u041e\u0433\u0440\u0430\u0444",
+                        "quantity": 40,
+                        "status": "requested",
+                        "requested_by": "executor1",
+                        "request_date": "2025-11-17T19:58:08.024471"
+                    },
+                    {
+                        "resource": "\u0410\u0421\u041c\u041e\u0433\u0440\u0430\u0444",
+                        "quantity": 8,
+                        "status": "requested",
+                        "requested_by": "executor1",
+                        "request_date": "2025-11-17T20:18:49.158271"
+                    }
+                ],
+                "report": ""
+            }
+        }
+    },
+    "app_20251117_220251": {
+        "id": "app_20251117_220251",
+        "date": "2025-11-17T22:02:51.670624",
+        "customer_name": "test",
+        "contract_number": "77",
+        "description": "test",
+        "address": "test",
+        "status": "\u0412 \u0440\u0430\u0431\u043e\u0442\u0435",
+        "stages": {
+            "stage_1": {
+                "id": "stage_1",
+                "name": "\u0422\u0435\u0441\u0442\u043e\u0432\u0430\u044f \u0437\u0430\u044f\u0432\u043a\u0430",
+                "description": "\u0422\u0435\u0441\u0442",
+                "executor": "executor1",
+                "status": "assigned",
+                "planned_start_date": "2025-11-17",
+                "planned_end_date": "2025-11-24",
+                "actual_start_date": "",
+                "actual_end_date": "",
+                "dependencies": [
+                    "stage_1",
+                    "stage_2"
+                ],
+                "required_resources": [
+                    {
+                        "name": "\u0410\u0421\u041c\u041e\u0433\u0440\u0430\u0444",
+                        "quantity": 1,
+                        "unit": "\u0448\u0442"
+                    }
+                ],
+                "requested_resources": [],
+                "report": ""
+            },
+            "stage_2": {
+                "id": "stage_2",
+                "name": "Test2",
+                "description": "test2",
+                "executor": "executor1",
+                "status": "assigned",
+                "planned_start_date": "2025-11-17",
+                "planned_end_date": "2025-11-24",
+                "actual_start_date": "",
+                "actual_end_date": "",
+                "dependencies": [],
+                "required_resources": [],
+                "requested_resources": [],
+                "report": ""
+            }
+        }
+    }
+}

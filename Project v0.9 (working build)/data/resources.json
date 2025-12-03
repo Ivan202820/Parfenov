@@ -1,0 +1,89 @@
+{
+    "\u041d\u043e\u0443\u0442\u0431\u0443\u043a": {
+        "name": "\u041d\u043e\u0443\u0442\u0431\u0443\u043a",
+        "quantity": 4,
+        "unit": "\u0448\u0442\u0443\u043a",
+        "min_quantity": 5,
+        "resource_type": "consumable",
+        "attributes": {
+            "expiry_date": "2025-11-17"
+        },
+        "reserved": 0
+    },
+    "\u0410\u0421\u041c\u041e\u0433\u0440\u0430\u0444": {
+        "name": "\u0410\u0421\u041c\u041e\u0433\u0440\u0430\u0444",
+        "quantity": 48,
+        "unit": "\u0448\u0442\u0443\u043a",
+        "min_quantity": 0
+    },
+    "\u0410\u0421\u041c\u041e\u0435\u0434": {
+        "name": "\u0410\u0421\u041c\u041e\u0435\u0434",
+        "quantity": 20,
+        "unit": "\u0448\u0442",
+        "min_quantity": 0,
+        "resource_type": "consumable",
+        "attributes": {},
+        "reserved": 0
+    },
+    "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0440\u0435\u0441\u0443\u0440\u0441": {
+        "name": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0440\u0435\u0441\u0443\u0440\u0441",
+        "quantity": 50,
+        "unit": "\u0448\u0442",
+        "min_quantity": 0,
+        "resource_type": "consumable",
+        "attributes": {},
+        "reserved": 0
+    },
+    "\u0410\u0421\u041c\u041e\u041e\u041e\u041e\u041e": {
+        "name": "\u0410\u0421\u041c\u041e\u041e\u041e\u041e\u041e",
+        "quantity": 100,
+        "unit": "\u0448\u0442",
+        "min_quantity": 0,
+        "resource_type": "consumable",
+        "attributes": {},
+        "reserved": 0
+    },
+    "\u0410\u0421\u041c\u041e1": {
+        "name": "\u0410\u0421\u041c\u041e1",
+        "quantity": 100,
+        "unit": "\u0448\u0442",
+        "min_quantity": 0,
+        "resource_type": "consumable",
+        "attributes": {},
+        "reserved": 0
+    },
+    "\u0410\u0421\u041c\u041e2": {
+        "name": "\u0410\u0421\u041c\u041e2",
+        "quantity": 200,
+        "unit": "\u0448\u0442",
+        "min_quantity": 0,
+        "resource_type": "consumable",
+        "attributes": {},
+        "reserved": 0
+    },
+    "\u041d\u043e\u0443\u0442\u0431\u0443\u043a \u0410\u0421\u041c\u041e": {
+        "name": "\u041d\u043e\u0443\u0442\u0431\u0443\u043a \u0410\u0421\u041c\u041e",
+        "quantity": 25,
+        "unit": "\u0448\u0442",
+        "min_quantity": 0,
+        "resource_type": "equipment",
+        "attributes": {
+            "inventory_number": "14881488",
+            "purchase_date": "2025-11-17"
+        },
+        "reserved": 0
+    },
+    "\u0410\u0432\u0442\u043e\u0433\u0440\u0430\u0444": {
+        "name": "\u0410\u0432\u0442\u043e\u0433\u0440\u0430\u0444",
+        "quantity": 5,
+        "unit": "\u0448\u0442",
+        "min_quantity": 0,
+        "resource_type": "chemical",
+        "attributes": {
+            "safety_class": "10/10",
+            "storage_conditions": "\u0423\u043d\u0438\u0447\u0442\u043e\u0436\u0438\u0442\u044c",
+            "expiry_date": "2025-11-17"
+        },
+        "reserved": 0
+    }
+}

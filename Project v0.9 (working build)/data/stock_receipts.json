@@ -1,0 +1,18 @@
+{
+    "receipt_1_20251117_194202": {
+        "id": "receipt_1_20251117_194202",
+        "date": "2025-11-17T19:42:02.746749",
+        "created_by": "storeman1",
+        "supplier": "\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0442\u0438\u043a\u0430",
+        "document_number": "3222222222",
+        "resources": [
+            {
+                "name": "\u0410\u0421\u041c\u041e\u041a\u0420\u0423\u0422\u041e\u0421\u0423\u041f\u0415\u0420\u041e\u0427\u0415\u041d\u042c",
+                "quantity": 40,
+                "unit": "\u0448\u0442"
+            }
+        ],
+        "total_items": 1,
+        "total_quantity": 40
+    }
+}

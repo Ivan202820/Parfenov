@@ -1,0 +1,182 @@
+{
+    "inv_1_20251117_195127": {
+        "id": "inv_1_20251117_195127",
+        "date_started": "2025-11-17T19:51:27.386320",
+        "date_completed": "2025-11-17T19:52:40.979345",
+        "conducted_by": "storeman1",
+        "status": "completed",
+        "items": [
+            {
+                "resource_name": "\u041d\u043e\u0443\u0442\u0431\u0443\u043a",
+                "expected_quantity": 4,
+                "actual_quantity": 4,
+                "difference": 0,
+                "unit": "\u0448\u0442\u0443\u043a",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u0410\u0421\u041c\u041e\u0433\u0440\u0430\u0444",
+                "expected_quantity": 48,
+                "actual_quantity": 48,
+                "difference": 0,
+                "unit": "\u0448\u0442\u0443\u043a",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u0410\u0421\u041c\u041e\u0435\u0434",
+                "expected_quantity": 20,
+                "actual_quantity": 20,
+                "difference": 0,
+                "unit": "\u0448\u0442",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0440\u0435\u0441\u0443\u0440\u0441",
+                "expected_quantity": 50,
+                "actual_quantity": 50,
+                "difference": 0,
+                "unit": "\u0448\u0442",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u0410\u0421\u041c\u041e\u041e\u041e\u041e\u041e",
+                "expected_quantity": 100,
+                "actual_quantity": 100,
+                "difference": 0,
+                "unit": "\u0448\u0442",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u0410\u0421\u041c\u041e1",
+                "expected_quantity": 100,
+                "actual_quantity": 100,
+                "difference": 0,
+                "unit": "\u0448\u0442",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u0410\u0421\u041c\u041e2",
+                "expected_quantity": 200,
+                "actual_quantity": 200,
+                "difference": 0,
+                "unit": "\u0448\u0442",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u041d\u043e\u0443\u0442\u0431\u0443\u043a \u0410\u0421\u041c\u041e",
+                "expected_quantity": 20,
+                "actual_quantity": 25,
+                "difference": 5,
+                "unit": "\u0448\u0442",
+                "resource_type": "equipment"
+            },
+            {
+                "resource_name": "\u0410\u0432\u0442\u043e\u0433\u0440\u0430\u0444",
+                "expected_quantity": 5,
+                "actual_quantity": 5,
+                "difference": 0,
+                "unit": "\u0448\u0442",
+                "resource_type": "chemical"
+            },
+            {
+                "resource_name": "\u0410\u0421\u041c\u041e\u041a\u0420\u0423\u0422\u041e\u0421\u0423\u041f\u0415\u0420\u041e\u0427\u0415\u041d\u042c",
+                "expected_quantity": 40,
+                "actual_quantity": 35,
+                "difference": -5,
+                "unit": "\u0448\u0442",
+                "resource_type": "consumable"
+            }
+        ],
+        "total_items": 10,
+        "items_counted": 10,
+        "total_differences": 10,
+        "discrepancies_count": 2,
+        "completed_by": "storeman1",
+        "stock_updated": true
+    },
+    "inv_2_20251125_145431": {
+        "id": "inv_2_20251125_145431",
+        "date_started": "2025-11-25T14:54:31.546672",
+        "date_completed": null,
+        "conducted_by": "storeman1",
+        "status": "in_progress",
+        "items": [
+            {
+                "resource_name": "\u041d\u043e\u0443\u0442\u0431\u0443\u043a",
+                "expected_quantity": 4,
+                "actual_quantity": null,
+                "difference": 0,
+                "unit": "\u0448\u0442\u0443\u043a",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u0410\u0421\u041c\u041e\u0433\u0440\u0430\u0444",
+                "expected_quantity": 48,
+                "actual_quantity": null,
+                "difference": 0,
+                "unit": "\u0448\u0442\u0443\u043a",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u0410\u0421\u041c\u041e\u0435\u0434",
+                "expected_quantity": 20,
+                "actual_quantity": null,
+                "difference": 0,
+                "unit": "\u0448\u0442",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u0422\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0440\u0435\u0441\u0443\u0440\u0441",
+                "expected_quantity": 50,
+                "actual_quantity": null,
+                "difference": 0,
+                "unit": "\u0448\u0442",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u0410\u0421\u041c\u041e\u041e\u041e\u041e\u041e",
+                "expected_quantity": 100,
+                "actual_quantity": null,
+                "difference": 0,
+                "unit": "\u0448\u0442",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u0410\u0421\u041c\u041e1",
+                "expected_quantity": 100,
+                "actual_quantity": null,
+                "difference": 0,
+                "unit": "\u0448\u0442",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u0410\u0421\u041c\u041e2",
+                "expected_quantity": 200,
+                "actual_quantity": null,
+                "difference": 0,
+                "unit": "\u0448\u0442",
+                "resource_type": "consumable"
+            },
+            {
+                "resource_name": "\u041d\u043e\u0443\u0442\u0431\u0443\u043a \u0410\u0421\u041c\u041e",
+                "expected_quantity": 25,
+                "actual_quantity": null,
+                "difference": 0,
+                "unit": "\u0448\u0442",
+                "resource_type": "equipment"
+            },
+            {
+                "resource_name": "\u0410\u0432\u0442\u043e\u0433\u0440\u0430\u0444",
+                "expected_quantity": 5,
+                "actual_quantity": null,
+                "difference": 0,
+                "unit": "\u0448\u0442",
+                "resource_type": "chemical"
+            }
+        ],
+        "total_items": 9,
+        "items_counted": 0,
+        "total_differences": 0,
+        "discrepancies_count": 0
+    }
+}
