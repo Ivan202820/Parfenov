@@ -1,0 +1,69 @@
+┌─────────────────┐      ┌─────────────────┐      ┌─────────────────┐
+│     USERS       │      │   APPLICATIONS  │      │     STAGES      │
+├─────────────────┤      ├─────────────────┤      ├─────────────────┤
+│ user_id (PK)    │◄──┐  │ app_id (PK)     │      │ stage_id (PK)   │
+│ username        │   │  │ app_number      │◄─────┤ app_id (FK)     │
+│ password_hash   │   │  │ created_date    │      │ name            │
+│ full_name       │   └──┤ customer_id (FK)│      │ description     │
+│ role            │      │ contract_number │      │ executor_id (FK)│
+│ department      │      │ description     │      │ status          │
+│ status          │      │ address         │      │ planned_start   │
+│ created_at      │      │ status          │      │ planned_end     │
+└─────────────────┘      └────────┬────────┘      │ actual_start    │
+       │                          │               │ actual_end      │
+       │                          │               │ report          │
+       │                          │               │ template_id (FK)│
+       │                          │               └────────┬────────┘
+       │                          │                        │
+       │                   ┌──────┴────────┐        ┌──────┴──────────┐
+       │                   │   RESOURCES   │        │   DEPENDENCIES  │
+       │                   ├───────────────┤        ├─────────────────┤
+       │                   │ resourceID(PK)│        │ dependencyiD(PK)│
+       └──────────────────►│ name          │        │ stage_id (FK)   │
+                           │ quantity      │        │ depends_on (FK) │
+                           │ unit          │        │ type            │
+                           │ min_quantity  │        └─────────────────┘
+                           │ type_id (FK)  │
+                           │ attributes    │         ┌─────────────────┐
+                           └───────┬───────┘         │    TEMPLATES    │
+                                   │                 ├─────────────────┤
+                            ┌──────┴────────┐        │ template_id (PK)│
+                            │RESOURCE_TYPES │        │ name            │
+                            ├───────────────┤        │ description     │
+                            │ type_id (PK)  │◄───────┤ duration_days   │
+                            │ type_name     │        │ created_by (FK) │
+                            │ description   │        └────────┬────────┘
+                            │ attrib_schema │                 │
+                            └───────────────┘          ┌──────┴──────────┐
+                                   │                   │TEMPLATE_RESOURCE│
+                            ┌──────┴────────┐          ├─────────────────┤
+                            │STOCK_RECEIPTS │          │ id (PK)         │
+                            ├───────────────┤          │ template_id (FK)│
+                            │ receipt_id(PK)│          │ resource_id (FK)│
+                            │ receipt_date  │          │ quantity        │
+                            │ supplier      │          └─────────────────┘
+                            │ doc_number    │
+                            │ created_by(FK)│         ┌─────────────────┐
+                            └──────┬────────┘         │    INVENTORIES  │
+                                   │                  ├─────────────────┤
+                            ┌──────┴─────────┐        │ inventory_id(PK)│
+                            │RECEIPT_ITEMS   │        │ start_date      │
+                            ├────────────────┤        │ end_date        │
+                            │ id (PK)        │        │ conducted_by(FK)│
+                            │ receipt_id(FK) │        │ status          │
+                            │ resource_id(FK)│        └────────┬────────┘
+                            │ quantity       │                 │
+                            └────────────────┘          ┌──────┴──────────┐
+                                   │                    │INVENTORY_ITEMS  │
+                            ┌──────┴──────────┐         ├─────────────────┤
+                            │  REQUESTS       │         │ id (PK)         │
+                            ├─────────────────┤         │ inventory_id(FK)│
+                            │ request_id(PK)  │         │ resource_id (FK)│
+                            │ stage_id (FK)   │         │ expected_qty    │
+                            │ resource_id(FK) │         │ actual_qty      │
+                            │ quantity        │         │ difference      │
+                            │ status          │         └─────────────────┘
+                            │ requested_date  │
+                            │ allocated_date  │
+                            │ allocated_by(FK)│
+                            └─────────────────┘
